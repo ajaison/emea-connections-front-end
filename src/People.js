@@ -11,13 +11,13 @@ function People() {
     }, [])
 
     return (
-        <div><h1>List of People</h1>
+        <div><h1 className="display-4 fw-bold lh-1 mb-3">List of People</h1>
             {people.length > 0 ?
               people.map(person => (
                   <div>
-                      <p> name: {person.name}</p>
-                      <p> role: {person.role}</p>
-                      <p> interests: {person.interests}</p>
+                      <p> Name: {person.name}</p>
+                      <p> Role: {person.role}</p>
+                      <p> Interests: {person.interests}</p>
                   </div>
               ))
                 : <div></div>

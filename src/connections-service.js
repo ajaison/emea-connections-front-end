@@ -11,3 +11,18 @@ const axiosInstance = axios.create({
 export function getPeople() {
     return axiosInstance.get('/person/interests?interests=food').then((response) => response.data.people)
 }
+
+export function postPerson(name,role,food) {
+    axios.post('/person', {
+        name: 'jon',
+        role: 'engineer',
+        interest: 'food'
+    })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    return ('Success')
+}
