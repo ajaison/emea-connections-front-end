@@ -23,8 +23,10 @@ function CreatePerson() {
         <div className = "Create">
             <h1 className="display-4 fw-bold lh-1 mb-3">Create Person</h1>
             <form onSubmit= {handleSubmit}>
-                    <label htmlFor="floatingInput">Full Name</label>
-                    <input type="text" value={name} required onChange={(e) => setName(e.target.value)}/>
+                    <label>
+                        Full Name
+                        <input type="text" value={name} required onChange={(e) => setName(e.target.value)}/>
+                    </label>
                     <label>Role</label>
                     <input type="text" value={role} required onChange={(e) => setRole(e.target.value)}/>
                     <label>Interest</label>

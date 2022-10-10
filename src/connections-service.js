@@ -1,22 +1,23 @@
 import axios from "axios";
 
-const axiosInstance = axios.create({
-    baseURL: 'http://localhost:8080'
+export const axiosInstance = axios.create({
+    baseURL: 'http://localhost:8080/people'
 })
 
-//export function getPeople() {
-//    return axiosInstance.get('/person?role=Gamer').then((response) => response.data.people)
-//}
-
 export function getPeople() {
-    return axiosInstance.get('/person/interests?interests=food').then((response) => response.data.people)
+    return axiosInstance.get('/').then((response) => response.data.people)
+}
+
+export function getPeopleWithInterest(interests) {
+    return axiosInstance.get('/' + {params: {interests}}).then((response) => response.data.people)
+
 }
 
 export function postPerson(name,role,food) {
-    axios.post('/person', {
+    axios.post('/', {
         name: 'jon',
         role: 'engineer',
-        interest: 'food'
+        interests: 'food'
     })
         .then(function (response) {
             console.log(response);

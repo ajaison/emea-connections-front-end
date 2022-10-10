@@ -1,16 +1,11 @@
-
-import chai, { expect } from 'chai'
-
 describe('empty spec',  () => {
   it('passes', async () => {
+    cy.visit('/');
+    cy.findByText("Create Person").should("exist");
 
-    chai.use(require('sinon-chai'));
-    cy.visit('localhost:3000')
+    cy.findByRole("textbox", { name: /full name/i }).type("John Smith");
 
-    //cy.findByText(/Gagan/i, {timeout: 7000}).should('exist')
-    expect(await cy.findByText(/John/i).should('exist'))
-    //expect(await cy.findByText(/Designer/i).should('exist'))
-    //expect(await cy.findByText(/Books/i).should('exist'))
+    cy.findByText(/John/i).should('exist');
   })
 })
 
